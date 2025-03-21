@@ -1,0 +1,29 @@
+specVersion: 1.2.0
+indexerHints:
+  prune: auto
+schema:
+  file: ./schema.graphql
+dataSources:
+  - kind: ethereum
+    name: TokenFactory
+    network: arbitrum-sepolia
+    source:
+      address: "0xbd39A7fAbBc9D92df06d93B226C62EA820CCf325"
+      abi: TokenFactory
+      startBlock: 134423656
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - OwnershipTransferred
+        - TokenCreated
+      abis:
+        - name: TokenFactory
+          file: ./abis/TokenFactory.json
+      eventHandlers:
+        - event: OwnershipTransferred(indexed address,indexed address)
+          handler: handleOwnershipTransferred
+        - event: TokenCreated(indexed address,indexed address,string,string,uint256)
+          handler: handleTokenCreated
+      file: ./src/token-factory.ts
