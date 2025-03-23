@@ -17,6 +17,7 @@ export function handleVestingScheduleCreated(
   entity.totalPeriods = event.params.totalPeriods
   entity.tokenName = event.params.tokenName
   entity.tokenSymbol = event.params.tokenSymbol
+  entity.token = event.params.token
 
   entity.blockNumber = event.block.number
   entity.blockTimestamp = event.block.timestamp
