@@ -8,9 +8,9 @@ dataSources:
     name: TokenFactory
     network: arbitrum-sepolia
     source:
-      address: "0xbd39A7fAbBc9D92df06d93B226C62EA820CCf325"
+      address: "0x114b314f3925a681ed729743b31f92dd157Ff2c5"
       abi: TokenFactory
-      startBlock: 134423656
+      startBlock: 135004396
     mapping:
       kind: ethereum/events
       apiVersion: 0.0.9
@@ -26,6 +26,8 @@ dataSources:
           handler: handleOwnershipTransferred
         - event: TokenCreated(indexed address,indexed address,string,string,uint256)
           handler: handleTokenCreated
+        - event: OmnichainTokenCreated(indexed address,indexed address,string,string,uint256)
+          handler: handleOmnichainTokenCreated
       file: ./src/token-factory.ts
   - kind: ethereum
     name: VestingFactory
