@@ -31,7 +31,7 @@ dataSources:
     name: VestingFactory
     network: arbitrum-sepolia
     source:
-      address: "0xF54A3b56e19C99e910a3F02232A8Cd225cE007C8"
+      address: "0x2344ef477DCCB2C9444c8A07955deDF4754Af44B"
       abi: VestingFactory
       startBlock: 134926434
     mapping:
