@@ -27,3 +27,25 @@ dataSources:
         - event: TokenCreated(indexed address,indexed address,string,string,uint256)
           handler: handleTokenCreated
       file: ./src/token-factory.ts
+  - kind: ethereum
+    name: VestingFactory
+    network: arbitrum-sepolia
+    source:
+      address: "0xF54A3b56e19C99e910a3F02232A8Cd225cE007C8"
+      abi: VestingFactory
+      startBlock: 134926434
+    mapping:
+      kind: ethereum/events
+      apiVersion: 0.0.9
+      language: wasm/assemblyscript
+      entities:
+        - VestingScheduleCreated
+      abis:
+        - name: VestingFactory
+          file: ./abis/VestingFactory.json
+      eventHandlers:
+        - event: VestingScheduleCreated(indexed address,indexed address,uint256,uint256,uint256,uint256,string,string,address)
+          handler: handleVestingScheduleCreated
+      file: ./src/vesting-factory.ts
+
+

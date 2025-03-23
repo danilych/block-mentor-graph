@@ -18,3 +18,18 @@ type TokenCreated @entity(immutable: true) {
   blockTimestamp: BigInt!
   transactionHash: Bytes!
 }
+
+type VestingScheduleCreated @entity(immutable: true) {
+  id: Bytes!
+  vestingContract: Bytes! # address
+  beneficiary: Bytes! # address
+  totalAmount: BigInt! # uint256
+  start: BigInt! # uint256
+  periodDuration: BigInt! # uint256
+  totalPeriods: BigInt! # uint256
+  tokenName: String! # string
+  tokenSymbol: String! # string
+  blockNumber: BigInt!
+  blockTimestamp: BigInt!
+  transactionHash: Bytes!
+}
